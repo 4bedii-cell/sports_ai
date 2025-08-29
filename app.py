@@ -11,11 +11,11 @@ if choice == "Football":
     home = st.text_input("Équipe domicile", "PSG")
     away = st.text_input("Équipe extérieur", "Marseille")
     if st.button("Prédire"):
-        res = requests.get("http://127.0.0.1:5000/predict/foot", params={"home": home, "away": away}).json()
+        res = requests.get("https://TON-BACKEND-RENDER.onrender.com/predict/foot", params={"home": home, "away": away}).json()
         st.json(res)
 
 if choice == "NBA":
     player = st.text_input("Nom du joueur", "LeBron James")
     if st.button("Prédire"):
-        res = requests.get("http://127.0.0.1:5000/predict/nba", params={"player": player}).json()
+        res = requests.get("https://TON-BACKEND-RENDER.onrender.com/predict/nba", params={"player": player}).json()
         st.json(res)
